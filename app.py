@@ -10,22 +10,23 @@ import matplotlib.image as mpimg
 st.set_page_config(layout='wide',page_title='Fashion Recommendation')
 df=pd.read_csv('df.csv')
 st.title('fashion recommendation system')
-
-gender=st.selectbox('select gender',df['gender'].value_counts().index.to_list())
+st.sidebar.title('select your outfits')
+gender=st.sidebar.selectbox('select gender',df['gender'].value_counts().index.to_list())
 df =df[df['gender'] == gender]
 
 if gender:
-        season = st.selectbox('select season', df['season'].value_counts().index.to_list())
+        season = st.sidebar.selectbox('select season', df['season'].value_counts().index.to_list())
         df = df[df['season'] == season]
         if season:
-            usage = st.selectbox('select occation', df['usage'].value_counts().index.to_list())
+            usage = st.sidebar.selectbox('select occation', df['usage'].value_counts().index.to_list())
             df = df[df['usage'] == usage]
             if usage:
-                subCategory = st.selectbox('select subCategory', df['subCategory'].value_counts().index.to_list())
+                subCategory = st.sidebar.selectbox('select subCategory', df['subCategory'].value_counts().index.to_list())
                 df = df[df['subCategory'] == subCategory]
                 if subCategory:
-                    articleType = st.selectbox('select articleType', df['articleType'].value_counts().index.to_list())
+                    articleType = st.sidebar.selectbox('select articleType', df['articleType'].value_counts().index.to_list())
                     df = df[df['articleType'] == articleType]
+  
                     col1,col2,col3,col4=st.columns(4)
                     with col1:
                         df1=df.sample(replace=False)
