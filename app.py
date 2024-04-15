@@ -56,3 +56,35 @@ if gender:
                                     img = Image.open(BytesIO(response.content))
                                     st.image(img, caption='Image', use_column_width=True)
                                     st.write(df1['productDisplayName'].values[0])
+                                    btn=st.button('next')
+                                    if btn :
+                                        col1, col2, col3, col4 = st.columns(4)
+                                        with col1:
+                                            df1 = df.sample(replace=False)
+                                            image_url = df1['link'].values[0]
+                                            response = requests.get(image_url)
+                                            img = Image.open(BytesIO(response.content))
+                                            st.image(img, caption='Image', use_column_width=True)
+                                            st.write(df1['productDisplayName'].values[0])
+                                            with col2:
+                                                df1 = df.sample(replace=False)
+                                                image_url = df1['link'].values[0]
+                                                response = requests.get(image_url)
+                                                img = Image.open(BytesIO(response.content))
+                                                st.image(img, caption='Image', use_column_width=True)
+                                                st.write(df1['productDisplayName'].values[0])
+                                                with col3:
+                                                    df1 = df.sample(replace=False)
+                                                    image_url = df1['link'].values[0]
+                                                    response = requests.get(image_url)
+                                                    img = Image.open(BytesIO(response.content))
+                                                    st.image(img, caption='Image', use_column_width=True)
+                                                    st.write(df1['productDisplayName'].values[0])
+                                                    with col4:
+                                                        df1 = df.sample(replace=False)
+                                                        image_url = df1['link'].values[0]
+                                                        response = requests.get(image_url)
+                                                        img = Image.open(BytesIO(response.content))
+                                                        st.image(img, caption='Image', use_column_width=True)
+                                                        st.write(df1['productDisplayName'].values[0])
+
