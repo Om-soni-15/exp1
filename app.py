@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 from PIL import Image
 import requests
 from io import BytesIO
-import matplotlib.image
 
 st.set_page_config(layout='wide', page_title='Fashion Recommendation')
 df = pd.read_csv('df2.csv')
